@@ -87,3 +87,7 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+# Prisma generated files
+generated
+prisma.yml

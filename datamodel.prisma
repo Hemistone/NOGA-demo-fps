@@ -1,0 +1,48 @@
+type Game {
+  id: ID! @id
+  name: String!
+  coverImage: String
+  ADboardList: [ADboard]! @relation(name: "ADboardRelation", onDelete: CASCADE)
+  playerList: [Player]! @relation(name: "PlayerRelation", onDelete: CASCADE)
+  viewpointList: [VP]! @relation(name: "ViewpointGame", onDelete: CASCADE) 
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type ADboard {
+  id: ID! @id
+  game: Game! @relation(name: "ADboardRelation")
+  ADboardID: String!
+  ADboardImage: String!
+  description: String
+  viewpointList: [VP]! @relation(name: "ViewpointADboard", onDelete: CASCADE)
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Player {
+  id: ID! @id
+  game: Game! @relation(name: "PlayerRelation")
+  playerID: String!
+  playerName: String!
+  playerGender: Gender
+  playerAge: Int
+  viewpointList: [VP]! @relation(name: "ViewpointPlayer", onDelete: CASCADE)
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+enum Gender {
+  MALE
+  FEMALE
+}
+
+type VP {
+  id: ID! @id
+  game: Game! @relation(name: "ViewpointGame")
+  ADboard: ADboard! @relation(name: "ViewpointADboard")
+  player: Player! @relation(name: "ViewpointPlayer")
+  point: Int!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
