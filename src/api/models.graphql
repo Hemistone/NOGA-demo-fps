@@ -1,0 +1,42 @@
+type Game {
+  id: ID!
+  name: String!
+  coverImage: String
+  ADboardList: [ADboard]
+  createdAt: String!
+  updatedAt: String!
+}
+
+type ADboard {
+  id: ID!
+  game: Game!
+  ADboardName: String!
+  ADboardImage: String!
+  description: String
+  viewpointList: [VP]
+  createdAt: String!
+  updatedAt: String!
+}
+
+type VP {
+  id: ID!
+  game: Game!
+  ADboard: ADboard!
+  userID: String!
+  userName: String!
+  viewscore: Int!
+  createdAt: String!
+  updatedAt: String!
+}
+
+type rawVP {
+  id: ID!
+  gameID: String!
+  gameName: String!
+  boardID: String!
+  userID: String!
+  userName: String!
+  viewscore: Int!
+  createdAt: String!
+  updatedAt: String!
+}
