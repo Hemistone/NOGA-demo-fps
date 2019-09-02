@@ -15,6 +15,7 @@ export default {
     ADboardName: ({ id }) => prisma.aDboard({ id }).ADboardName(),
     ADboardImage: ({ id }) => prisma.aDboard({ id }).ADboardImage(),
     description: ({ id }) => prisma.aDboard({ id }).description(),
+    IngameImages: ({ id }) => prisma.aDboard({ id }).IngameImages(),
     viewpointList: ({ id }) => prisma.aDboard({ id }).viewpointList(),
     createdAt: ({ id }) => prisma.aDboard({ id }).createdAt(),
     updatedAt: ({ id }) => prisma.aDboard({ id }).updatedAt()

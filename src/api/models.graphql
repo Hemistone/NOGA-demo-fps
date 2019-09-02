@@ -13,6 +13,7 @@ type ADboard {
   ADboardName: String!
   ADboardImage: String!
   description: String
+  IngameImages: [String]
   viewpointList: [VP]
   createdAt: String!
   updatedAt: String!

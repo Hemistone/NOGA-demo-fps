@@ -13,6 +13,7 @@ type ADboard {
   ADboardName: String!
   ADboardImage: String!
   description: String
+  IngameImages: [String] @scalarList(strategy: RELATION)
   viewpointList: [VP] @relation(name: "ViewpointADboard", onDelete: CASCADE)
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
