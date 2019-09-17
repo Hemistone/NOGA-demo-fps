@@ -91,3 +91,4 @@ typings/
 # Prisma generated files
 generated
 prisma.yml
+build
